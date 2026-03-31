@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>O'quvchilar Ro'yxati</p>
+
+<hr>
+
+{% for student in students %}
+<a href="{% url 'student_info' student.pk %}">{{ student.name }}</a><br>
+<hr>
+{% empty %}
+<p>Hozircha O'quvchilar kiritilmagan</p>
+{% endfor %}
+
+<a href="{% url 'student_add' %}">Yangi O'quvchi qo'shish</a><br>
+<a href="{% url 'home' %}">Back to Home</a>
+<hr>
+</body>
+</html>
